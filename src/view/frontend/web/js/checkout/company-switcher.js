@@ -23,18 +23,25 @@ define([
 
         bindEvent: function () {
             // Wait until element is available
-            domObserver.get('input[name="billing[type]"]', function () {
-                $('input[name="billing[type]"]').change(function() {
-                    var value = $('input[name="billing[type]"]:checked').val();
-                    if (value == '1') {
-                        $('div[name="shippingAddress.company"]').hide();
-                        $('div[name="shippingAddress.vat_id"]').hide();
-                    }
-                    else {
-                        $('div[name="shippingAddress.company"]').show();
-                        $('div[name="shippingAddress.vat_id"]').show();
-                    }
-                });
+            var changeEventBinded = false;
+            domObserver.get('input[name="billing[type]"], div[name="shippingAddress.company"], div[name="shippingAddress.vat_id"]', function () {
+                $('div[name="shippingAddress.company"]').hide();
+                $('div[name="shippingAddress.vat_id"]').hide();
+
+                if(!changeEventBinded) {
+                    $('input[name="billing[type]"]').change(function () {
+                        var value = $('input[name="billing[type]"]:checked').val();
+                        if (value != '1') {
+                            $('div[name="shippingAddress.company"]').hide();
+                            $('div[name="shippingAddress.vat_id"]').hide();
+                        }
+                        else {
+                            $('div[name="shippingAddress.company"]').show();
+                            $('div[name="shippingAddress.vat_id"]').show();
+                        }
+                    });
+                }
+                changeEventBinded = true;
             }.bind(this));
         }
     });
