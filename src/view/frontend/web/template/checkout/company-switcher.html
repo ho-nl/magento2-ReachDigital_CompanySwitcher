@@ -2,14 +2,12 @@
   ~ Copyright © 2016 H&O E-commerce specialisten B.V. (http://www.h-o.nl/)
   ~ See LICENSE.txt for license details.
   -->
-<div class="form-group">
-    <label class="required control-label" translate="'Type bestelling'"></label>
-    <div class="form-values">
-        <div class="col-xs-12 col-sm-8" id="company-switcher">
-            <input type="radio" id="billing:type_private" name="billing[type]" attr="title: $t('Particulier')" class="order-type validation-passed" value="0" checked="checked">
-            <label class="radio-inline" for="billing:type_private" translate="'Particulier'"></label>
-            <input type="radio" id="billing:type_business" name="billing[type]" attr="title: $t('Zakelijk')" class="order-type validation-passed" value="1">
-            <label class="radio-inline" for="billing:type_business" translate="'Zakelijk'"></label>
-        </div>
+<div class="field">
+    <label class="label" translate="'Type bestelling'"></label>
+    <div class="control" id="company-switcher">
+        <input type="radio" id="billing:type_private" name="billing[type]" attr="title: $t('Particulier')" class="order-type validation-passed" value="0" checked="checked">
+        <label class="radio-inline" for="billing:type_private" translate="'Particulier'"></label> &nbsp;
+        <input type="radio" id="billing:type_business" name="billing[type]" attr="title: $t('Zakelijk')" class="order-type validation-passed" value="1">
+        <label class="radio-inline" for="billing:type_business" translate="'Zakelijk'"></label>
     </div>
 </div>
