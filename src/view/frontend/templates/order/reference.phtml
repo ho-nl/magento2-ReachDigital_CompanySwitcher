@@ -1,0 +1,21 @@
+<?php
+/**
+ * Copyright © 2017 H&O E-commerce specialisten B.V. (http://www.h-o.nl/)
+ * See LICENSE.txt for license details.
+ */
+
+/** @var \Magento\Sales\Block\Order\Info $block */
+?>
+
+<?php if ($reference = $block->getOrder()->getData('own_reference')): ?>
+    <div class="block ">
+        <div class="block-title"><strong><?php echo __('Own Reference'); ?></strong></div>
+        <div class="block-content">
+            <div class="box">
+                <div class="box-content">
+                    <p><?php echo $block->escapeHtml($reference); ?></p>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>
