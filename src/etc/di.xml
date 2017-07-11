@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+  ~ Copyright © 2017 H&O E-commerce specialisten B.V. (http://www.h-o.nl/)
+  ~ See LICENSE.txt for license details.
+  -->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Checkout\Model\ShippingInformationManagement">
+        <plugin sortOrder="1" name="hoCompanySwitcherShippingInformationManagement" type="Ho\CompanySwitcher\Plugin\ModelShippingInformationManagementPlugin"/>
+    </type>
+
+    <type name="Magento\Sales\Api\Data\OrderInterface">
+        <plugin sortOrder="1" name="hoCompanySwitcherOrderInterface" type="Ho\CompanySwitcher\Plugin\ApiDataOrderInterfacePlugin"/>
+    </type>
+
+    <type name="Magento\Sales\Model\OrderRepository">
+        <plugin sortOrder="1" name="hoCompanySwitcherOrderRepository" type="Ho\CompanySwitcher\Plugin\ModelOrderRepositoryPlugin"/>
+    </type>
+</config>

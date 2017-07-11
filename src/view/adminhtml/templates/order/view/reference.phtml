@@ -1,0 +1,19 @@
+<?php
+/**
+ * Copyright © 2017 H&O E-commerce specialisten B.V. (http://www.h-o.nl/)
+ * See LICENSE.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/** @var \Ho\CompanySwitcher\Block\Adminhtml\Order\View\OwnReference $block */
+
+$order = $block->getOrder();
+?>
+<?php if (! empty($order->getData('own_reference'))): ?>
+    <tr>
+        <th><?php /* @escapeNotVerified */ echo __('Own Reference'); ?></th>
+        <td><?php /* @escapeNotVerified */ echo $block->escapeHtml($order->getData('own_reference')); ?></td>
+    </tr>
+<?php endif; ?>
+

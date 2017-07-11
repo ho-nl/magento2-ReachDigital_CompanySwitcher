@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <!--
-  ~ Copyright © 2016 H&O E-commerce specialisten B.V. (http://www.h-o.nl/)
+  ~ Copyright © 2017 H&O E-commerce specialisten B.V. (http://www.h-o.nl/)
   ~ See LICENSE.txt for license details.
   -->
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
-    <module name="Ho_CompanySwitcher" setup_version="0.1.0">
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="Ho_CompanySwitcher" setup_version="0.1.1">
         <sequence>
             <module name="Magento_Checkout"/>
         </sequence>

@@ -1,8 +1,9 @@
 <?xml version="1.0"?>
 <!--
-  ~ Copyright © 2016 H&O E-commerce specialisten B.V. (http://www.h-o.nl/)
+  ~ Copyright © 2017 H&O E-commerce specialisten B.V. (http://www.h-o.nl/)
   ~ See LICENSE.txt for license details.
   -->
+
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceBlock name="checkout.root">
@@ -26,11 +27,28 @@
                                                                         <item name="template" xsi:type="string">Ho_CompanySwitcher/checkout/company-switcher</item>
                                                                     </item>
                                                                 </item>
+
                                                                 <item name="company" xsi:type="array">
                                                                     <item name="sortOrder" xsi:type="string">2</item>
                                                                 </item>
+
                                                                 <item name="vat_id" xsi:type="array">
                                                                     <item name="sortOrder" xsi:type="string">3</item>
+                                                                </item>
+
+                                                                <item name="own_reference" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Magento_Ui/js/form/element/abstract</item>
+                                                                    <item name="provider" xsi:type="string">checkoutProvider</item>
+                                                                    <item name="config" xsi:type="array">
+                                                                        <item name="customScope" xsi:type="string">shippingAddress</item>
+                                                                        <item name="template" xsi:type="string">ui/form/field</item>
+                                                                        <item name="elementTmpl" xsi:type="string">ui/form/element/input</item>
+                                                                        <item name="id" xsi:type="string">own_reference</item>
+                                                                    </item>
+                                                                    <item name="dataScope" xsi:type="string">shippingAddress.custom_attributes.own_reference</item>
+                                                                    <item name="label" translate="true" xsi:type="string">Own Reference</item>
+                                                                    <item name="sortOrder" xsi:type="string">4</item>
+                                                                    <item name="id" xsi:type="string">own_reference</item>
                                                                 </item>
                                                             </item>
                                                         </item>
