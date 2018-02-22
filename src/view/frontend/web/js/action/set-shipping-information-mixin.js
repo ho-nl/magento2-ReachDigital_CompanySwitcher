@@ -1,5 +1,5 @@
 /*
- * Copyright © 2017 H&O E-commerce specialisten B.V. (http://www.h-o.nl/)
+ * Copyright © Reach Digital (https://www.reachdigital.io/)
  * See LICENSE.txt for license details.
  */
 
