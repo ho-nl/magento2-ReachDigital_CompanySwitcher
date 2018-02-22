@@ -4,7 +4,7 @@
 
 ## Installation
 ```BASH
-composer require honl/magento2-companyswitcher
+composer require reach-digital/magento2-companyswitcher
 php bin/magento module:enable Ho_CompanySwitcher
 ```
 
