@@ -26,7 +26,7 @@ For PDF you can use:
 <?php endif; ?>
 ```
 
-##Credits
+## Credits
 Read more about this extension on our blog    
 https://www.reachdigital.nl/blog/gratis-magento-2-module-optimaal-zakelijk-bestellen-in-het-magento-afrekenproces
 
