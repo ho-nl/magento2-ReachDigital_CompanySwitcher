@@ -25,3 +25,11 @@ For PDF you can use:
     <?= __('Own reference') ?>: <?= $block->escapeHtml($order->getData('own_reference')); ?><br/>
 <?php endif; ?>
 ```
+
+##Credits
+Read more about this extension on our blog    
+https://www.reachdigital.nl/blog/gratis-magento-2-module-optimaal-zakelijk-bestellen-in-het-magento-afrekenproces
+
+Developed by Reach Digital  
+https://www.reachdigital.nl
+
