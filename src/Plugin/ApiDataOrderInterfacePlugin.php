@@ -3,31 +3,42 @@
  * Copyright © Reach Digital (https://www.reachdigital.io/)
  * See LICENSE.txt for license details.
  */
+declare(strict_types=1);
 
 namespace Ho\CompanySwitcher\Plugin;
 
 use Magento\Sales\Api\Data\OrderExtensionFactory;
+use Magento\Sales\Api\Data\OrderExtensionInterface;
 use Magento\Sales\Api\Data\OrderInterface;
 
 class ApiDataOrderInterfacePlugin
 {
-    /** @var OrderExtensionFactory orderExtensionFactory */
-    private $orderExtensionFactory;
+    /** @var OrderExtensionFactory $extensionFactory */
+    private $extensionFactory;
 
     /**
-     * @param OrderExtensionFactory $orderExtensionFactory
+     * @param OrderExtensionFactory $extensionFactory
      */
-    public function __construct(OrderExtensionFactory $orderExtensionFactory)
+    public function __construct(OrderExtensionFactory $extensionFactory)
     {
-        $this->orderExtensionFactory = $orderExtensionFactory;
+        $this->extensionFactory = $extensionFactory;
     }
 
-    public function afterGetExtensionAttributes(OrderInterface $entity, $extension)
-    {
-        if ($extension === null) {
-            $extension = $this->orderExtensionFactory->create();
+    /**
+     * @param OrderInterface               $entity
+     * @param OrderExtensionInterface|null $extensionAttributes
+     *
+     * @return OrderExtensionInterface
+     */
+    public function afterGetExtensionAttributes(
+        OrderInterface $entity,
+        OrderExtensionInterface $extensionAttributes = null
+    ): OrderExtensionInterface {
+        if ($extensionAttributes === null) {
+            $extensionAttributes = $this->extensionFactory->create();
+            $entity->setExtensionAttributes($extensionAttributes);
         }
 
-        return $extension;
+        return $extensionAttributes;
     }
 }
