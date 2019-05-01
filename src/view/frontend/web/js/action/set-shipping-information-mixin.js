@@ -14,15 +14,28 @@ define([
         return wrapper.wrap(setShippingInformationAction, function (originalAction) {
             var shippingAddress = quote.shippingAddress();
 
-            if (shippingAddress.customAttributes === undefined) {
-                shippingAddress.customAttributes = {};
+            if (shippingAddress.customAttributes[0] === undefined) {
+                // pass execution to original action ('Magento_Checkout/js/action/set-shipping-information')
+                return originalAction();
             }
 
             if (shippingAddress['extension_attributes'] === undefined) {
                 shippingAddress['extension_attributes'] = {};
             }
 
-            shippingAddress['extension_attributes']['own_reference'] = shippingAddress.customAttributes['own_reference'];
+            $(shippingAddress.customAttributes).each(function(index) {
+                if (shippingAddress.customAttributes[index].attribute_code === 'own_reference') {
+                  shippingAddress['extension_attributes']['own_reference'] = shippingAddress.customAttributes[index].value;
+
+                  if (shippingAddress.customAttributes.length === 1) {
+                      delete shippingAddress.customAttributes;
+                  } else {
+                      delete shippingAddress.customAttributes[index];
+                  }
+
+                  return false;
+                }
+            });
 
             // pass execution to original action ('Magento_Checkout/js/action/set-shipping-information')
             return originalAction();
