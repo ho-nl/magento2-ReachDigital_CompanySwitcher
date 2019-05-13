@@ -14,7 +14,7 @@ define([
         return wrapper.wrap(setShippingInformationAction, function (originalAction) {
             var shippingAddress = quote.shippingAddress();
 
-            if (shippingAddress.customAttributes[0] === undefined) {
+            if (shippingAddress.customAttributes === undefined) {
                 // pass execution to original action ('Magento_Checkout/js/action/set-shipping-information')
                 return originalAction();
             }
