@@ -23,17 +23,11 @@ define([
                 shippingAddress['extension_attributes'] = {};
             }
 
-            $(shippingAddress.customAttributes).each(function(index) {
-                if (shippingAddress.customAttributes[index].attribute_code === 'own_reference') {
-                  shippingAddress['extension_attributes']['own_reference'] = shippingAddress.customAttributes[index].value;
+            $(shippingAddress.customAttributes).each(function() {
+                if (shippingAddress.customAttributes.own_reference !== undefined) {
+                    shippingAddress['extension_attributes']['own_reference'] = shippingAddress.customAttributes.own_reference;
 
-                  if (shippingAddress.customAttributes.length === 1) {
-                      delete shippingAddress.customAttributes;
-                  } else {
-                      delete shippingAddress.customAttributes[index];
-                  }
-
-                  return false;
+                    return false;
                 }
             });
 

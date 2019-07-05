@@ -4,7 +4,7 @@
     "homepage": "https://github.com/ho-nl/magento2-ReachDigital_CompanySwitcher",
     "require": {
         "php": "~7.0.13||~7.1.0||~7.2.0",
-        "magento/product-community-edition": "^2.2.8||^2.3.0"
+        "magento/product-community-edition": "^2.2.9||^2.3.0"
     },
     "type": "magento2-module",
     "license": "BSD-2-Clause",
