@@ -4,7 +4,7 @@
     "homepage": "https://github.com/ho-nl/magento2-ReachDigital_CompanySwitcher",
     "require": {
         "php": "^7.2|^7.3|^7.4|^8.0|^8.1",
-        "magento/framework": "~102.0.0"
+        "magento/framework": "^102.0.0 || ^103.0.0",
     },
     "type": "magento2-module",
     "license": "BSD-2-Clause",
